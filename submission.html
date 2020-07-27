@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trello board</title>
+    
+        <link rel="stylesheet" href="external/reset.css">
+        <link rel="stylesheet" href="css/utils.css">
+        <link rel="stylesheet" href="css/trello-dashboard.css">
+        <link rel="stylesheet" href="css/trello-board.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <style>
+        body{
+            background-image: url("https://ak.picdn.net/shutterstock/videos/9102242/thumb/1.jpg");
+            background-position: center;
+            background-attachment: fixed;
+            background-size: 100%;
+        }
+        .flex-container {
+          display: flex;
+          padding:120px 24px 24px;
+          
+        }
+        .navbar{
+            color:white;
+            background-color: rgba(64, 144, 172,0.65);
+            padding:3px 20px 3px 0px;
+            display: flex;
+            height:50px;
+            justify-content: space-between;
+            position: fixed;
+            top:0;
+            left:0;
+            right:0;
+        }
+        
+        .flex-container > div {
+          background-color: rgba( 240, 240, 240,0.9);
+          margin-top: 1px;
+          margin-bottom: 1px;
+          margin-left: 5px;
+          margin-right: 5px;
+          padding: 1px;
+          font-size: 20px;
+          flex-shrink: 0;
+          flex-basis: 240px;
+          max-height: 100%;
+          overflow: hidden;
+        }
+        .d{
+            margin:8px;
+            padding:84px;
+        
+        }
+        button{
+             transform-style: flat;
+        }
+        .p{
+            background-color:white;
+            padding:10px;
+        }
+        p:hover{
+            cursor:pointer;
+            opacity: 0.5;
+    
+        }
+        nav:hover{
+            cursor: pointer;
+        }
+        p{
+            font-size: 15px;
+            opacity:0.8;
+            margin:8px;
+            padding:10px;
+        }
+        .navbar .t{
+            font-size: 1.3em;
+            font-family: comic sans ms,cursive;
+            justify-content: space-around;
+        }
+
+        .navbar > * {
+            width:300px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .navbar .i input{
+            width:120px;
+            background-color: rgba(64, 144, 172,1);
+            color:black;
+            font-size: 1.15em;
+            line-height: 1.4em;
+            padding:4px 0.5em;
+            outline: none;
+            border-radius: 2px;
+        }
+        .navbar .menu > *, .navbar .actions > * {
+            background-color: rgba(64, 144, 172,1);
+            padding:8px;
+            display: inline-block;
+            border-radius: 2px;
+            margin: 0px 4px;
+        }
+        .navbar .menu{
+            justify-content: flex-start;
+
+        }
+        .navbar .i{
+            padding: 0;
+            background-color:transparent;
+        }
+        .navbar .actions{
+            justify-content: flex-end;
+        }
+        
+       
+        
+        #hover{
+            display: none;
+        }
+        #k:hover + #hover{
+            display:block;
+        }
+        .u{
+            display:flex;
+            justify-content: space-between;
+
+        }
+        .u h5{
+            justify-content: flex-start;
+            margin:8px;
+        }
+        .u .dot{
+            justify-content: flex-end;
+            margin:8px;
+            padding:10px;
+        }
+        
+        .navbar .m{
+            justify-content: flex-end;
+        }
+        #navo{
+            background-color: rgba(128,128,128,0.3);
+            padding-top: 66px;
+            height: 40px;
+        }
+        h5{
+            
+            padding:10px;
+        }
+        
+     </style>
+</head>
+<body>
+    <nav class="navbar">
+      <ul class="menu"> 
+        <li class="l"><i class="fas fa-home"></i></li>
+       <li class="l"><i class="boards fas fa-th-list"></i>Boards</li>
+      <li class="i"> <input type="text"width="120px"></li>
+        </ul>
+    
+        
+        <div class="t">
+                Tralala
+         </div>
+         <div class="actions">
+              <span class="l"> <i class="fas fa-plus" id="add-board"></i></span>
+               <span class="1"> <i class="fas fa-user" id="profile-image"></i></span>
+         </div>
+        
+    </nav>
+    <nav id="navo"class="navbar" >
+        <div class="menu">
+            <span style="color:white;background-color:rgba(128,128,128,0.3);"class="l">Frontend training</span>
+        </div>
+        <div class="actions">
+            <span style="color:white;background-color:rgba(128,128,128,0.3)"> <i class="fas fa-ellipsis-v">Show menu</i></span>
+        </div>
+        
+    </nav>
+    
+    <div class="flex-container">
+        
+        <div class="d" style="max-height:260;">
+            <div class="u"><h5>To do</h5>
+            <span class="dot" style="color: black;">...</span>
+            </div>
+            <p class="p">Learn HTML </p>
+            <p class="p">Learn CSS</p>
+            <p class="p">Learn javaScript</p>
+            <p>+ Add another card</p>
+        </div>
+        <div class="d" style="max-height:250px;">
+            <div class="u"><h5>Doing</h5>
+            <span class="dot" style="color: black;">...</span>
+            </div>
+            <p class="p">Prepare resume</p>
+            <textarea rows="3"opacity="0.5"style="margin:8px;padding:10px;">Enter a title for this card...</textarea><br>
+            <button style="background-color: olivedrab;color:white;"> Add card</button>
+
+        </div>
+        <div class="d"style="max-height: 150px;">
+            <div class="u"><h5>Testing/Verifying</h5>
+                
+            <span class="dot" style="color: black;">...</span>
+            </div>
+            <p class="p">Twitter app frontend</p>
+            <p >+ Add another card</p>
+
+        </div> 
+        <div class="d"style="max-height: 150px;">
+            <div class="u"><h5>Deploying</h5>
+            <span class="dot" style="color: black;">...</span>
+            </div>
+            <p class="p">Twitter app backend</p>
+            <p>+ Add another card</p>
+        </div>
+        <div class="d"style="max-height: 100px;">
+            <div class="u"><h5>Done</h5>
+            <span class="dot" style="color: black;">...</span>
+            </div>
+            <p >Add card</p>
+        </div>
+        <div id="k"class="d"style="max-height: 100px;"><br>
+            <p>+ Add another list</p>
+        </div> 
+    
+
+        <div id="hover"class="d"style="max-height: 150px;">
+            <br>
+            <textarea rows="2"opacity="0.5"style="margin:8px;padding:10px;">Enter list title...</textarea><br>
+            <button>Add list</button>
+        </div>
+          
+  
+      </div>
+</body>
+</html>
